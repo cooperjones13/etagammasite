@@ -19,14 +19,14 @@ function Members(props) {
                 <h2>Brothers of Eta Gamma Chapter</h2>
             </Jumbotron>
             <section className="membersView">
-                {members && members.map(member=>{
+                {members && Object.entries(members).map(member=>{
+                    console.log(member);
                     return(
-                        <Card style={{ width: '18rem' }} key={member.id}>
+                        <Card style={{ width: '18rem' }} key={member[0]}>
                             <Card.Body>
-                                <Card.Title>{member.name}</Card.Title>
+                                <Card.Title>{member[1].name}</Card.Title>
                                 <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                {member[1].status}
                                 </Card.Text>
                                 <Button variant="primary">Go somewhere</Button>
                             </Card.Body>
