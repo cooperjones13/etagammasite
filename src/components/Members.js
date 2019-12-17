@@ -4,7 +4,7 @@ import {Jumbotron, Button, Card} from 'react-bootstrap';
 import './../style/Members.scss'
 import {connect} from 'react-redux'
 import { useSelector } from 'react-redux'
-import { useFirebaseConnect } from 'redux-firebase'
+import { useFirebaseConnect } from 'react-redux-firebase'
 
 function Members(props) {
 
