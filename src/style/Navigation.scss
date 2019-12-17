@@ -1,0 +1,92 @@
+@import "./custom.scss";
+
+
+.Navigation{
+    background-color: theme-color("primary");
+    padding: 1vh 4% !important;
+    display: flex;
+    align-items: center;
+    
+
+    .navbar-brand{
+        font-size: 2rem;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .title-container{
+            text-align: left;
+        }
+
+        h1{
+            font-size: 2.1rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        p{
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 100;
+        }
+
+        @media only screen and (min-width: 600px) {
+            img{
+                height: 4rem;
+            }
+            }
+
+        @media only screen and (max-width: 600px) {
+            img, p{
+                display: none !important;
+            }
+            h1{
+                font-size: 1.5rem;
+            }
+            }
+
+
+
+        
+    }
+    .navlinks, .dropdown-toggle{
+        font-size: 1.3rem;
+        color: theme-color("light") !important;
+        margin-left: 2%;
+        font-weight: 500;
+        border-radius: 5px;
+        transition: ease 1s color;
+        transition: ease 1s background-color;
+        text-align: center;
+
+        &:hover{
+            background-color: darken(theme-color("primary"), 1);
+            color: theme-color("secondary") !important;
+        }
+    }
+
+
+
+    .dropdown-item{
+        font-size: 1.3rem;
+        color: theme-color("dark") !important;
+    }
+
+    .dropdown-item:hover{
+        color: theme-color("primary") !important;
+    }
+
+    .dropdown-divider{
+        border-top: theme-color("primary") solid 2px;
+    }
+    
+}
+.navbar-nav{
+    flex: 1;
+    margin: auto !important;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+
+}

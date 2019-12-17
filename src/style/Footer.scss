@@ -1,0 +1,22 @@
+@import "./custom.scss";
+
+.Footer{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center !important;
+}
+
+.navbar-text{
+    color: theme-color("light") !important;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (min-width: 600px) {
+
+}
+
+@media only screen and (max-width: 600px) {
+    
+}

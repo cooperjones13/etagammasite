@@ -1,0 +1,21 @@
+
+/* import only the necessary Bootstrap files */
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+$theme-colors: (
+  "primary":    rgba(145,51,51,1),
+  "secondary":  #FFDF80,
+  "dark":       #32292F
+);
+
+*{
+  font-family: 'Muli', sans-serif;
+}
+
+$placeholder-img: '../images/placeholder.png';
+
+
+// Bootstrap and its default variables
+@import "../../node_modules/bootstrap/scss/bootstrap";

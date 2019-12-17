@@ -1,0 +1,23 @@
+@import "./custom.scss";
+
+.AddMember{
+    width: 100%;
+    .form-container{
+        width: 100%;
+        padding: 5%;
+        display: flex;
+        justify-content: center;
+        .addMemberForm{
+            width: 600px;
+            max-width: 100%;
+            
+            .btn-row{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+    
+    
+        }
+    }
+}

@@ -1,0 +1,208 @@
+@import "./custom.scss";
+
+.Home{
+    .banner{
+        height: 80vh;
+        padding: 0 10%;
+        margin:0;
+        background-size: cover !important;
+        background-position: center;
+        background: linear-gradient(
+          rgba(0, 0, 0, 0.1),
+          rgba(145,51,51, 0.3)
+        ),url('../images/orange.JPG');
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: theme-color("light");
+    
+    
+        @media only screen and (min-width: 600px) {
+            h2{
+                font-size: 5rem;
+                font-weight: 700;
+                text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.4);
+            }
+            p{
+                font-size: 2rem;
+                font-weight: 400;
+                text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.4);
+            }
+          }
+    
+        @media only screen and (max-width: 600px) {
+            h2{
+                display: none;
+            }
+            p{
+                font-size: 2rem;
+                font-weight: 500;
+                text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.4);
+            }
+          }
+    }
+    
+    .pillars{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    
+    @media only screen and (min-width: 800px) and (max-width: 1180px) {
+        .card{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas: 
+                "img body body"
+            ;
+            width:100%;
+        }
+        .card-body{
+            grid-area: body;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.25em 5vw;
+        }
+        .img-hover-container{
+            grid-area: img;
+        }
+      }
+    @media only screen and (max-width: 800px) {
+        .card{
+            flex-direction: row;
+            width:100%;
+        }
+        .card-body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.25em 5vw;
+        }
+        .img-hover-container{
+            display:none;
+        }
+      }
+    @media only screen and (min-width: 1180px){
+        .card{
+            flex-direction: column;
+            min-width: 25%;
+            max-width: 23rem;
+        }
+    }
+    
+    .card{
+        background-color: theme-color("light");
+        margin: 1%;
+    
+        .card-title{
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+    
+        .card-body{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    
+    
+        
+    
+        /* [1] The container */
+        .img-hover-container {
+            width: 100%; /* [1.1] Set it as per your need */
+            overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+            filter: brightness(100%) blur(0%);
+    
+            .card-img-caption{
+                position: absolute;
+                top: 30%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                transition: opacity 1s ease;
+                color: theme-color("light");
+                font-weight: 600;
+                font-size: 1.3rem;
+                text-align: center;
+                pointer-events: none;
+                
+            }
+            
+            &:hover{
+                .card-img-caption {
+                    opacity: 1;
+                }
+            }
+        }
+        
+        /* [2] Transition property for smooth transformation of images */
+        .img-hover-container img {
+            transition: transform 1s, filter 2s ease;
+        }
+        
+        /* [3] Finally, transforming the image when container gets hovered */
+        .img-hover-container:hover img {
+            filter: brightness(70%) blur(1px);
+            transform: scale(1.2);
+        }
+    
+      }
+    
+      .rush-banner{
+            background-image: url($placeholder-img);
+            background-position: center;
+            height: 50vh;
+            padding: 0 10%;
+            background-size: cover !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: theme-color("light");
+    
+            @media only screen and (min-width: 900px) {
+                h2{
+                    font-size: 3rem;
+                    font-weight: 700;
+                    text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.4);
+                }
+                p{
+                    font-size: 2rem;
+                    font-weight: 400;
+                    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.4);
+                }
+              }
+            @media only screen and (min-width: 600px) and (max-width: 900px){
+                h2{
+                    font-size: 2rem;
+                    font-weight: 700;
+                    text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.4);
+                }
+                p{
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.4);
+                }
+              }
+        
+            @media only screen and (max-width: 600px) {
+                h2{
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+                }
+                p{
+                    font-size: 1rem;
+                    font-weight: 400;
+                    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+                }
+              }
+      }
+    
+    
+}
