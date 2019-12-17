@@ -4,14 +4,14 @@ import {Jumbotron, Button, Card} from 'react-bootstrap';
 import './../style/Members.scss'
 import {connect} from 'react-redux'
 import { useSelector } from 'react-redux'
-import { useFirestoreConnect } from 'react-redux-firebase'
+import { useFirebaseConnect } from 'redux-firebase'
 
 function Members(props) {
 
-    useFirestoreConnect([
-        { collection: 'members' } // or 'todos'
+    useFirebaseConnect([
+        { path: 'members' } // or 'todos'
       ])
-    const members = useSelector(state => state.firestore.ordered.members);
+    const members = useSelector(state => state.firebase.data['members']);
  
     return (
         <div className="Members">
