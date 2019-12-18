@@ -9,7 +9,6 @@ import Footer from './components/Footer.js';
 //Pages
 import Home from './components/Home.js';
 import Members from './components/Members.js';
-import AddMember from './components/AddMember.js';
 function App() {
 
   return (
@@ -22,7 +21,6 @@ function App() {
           <Route path="/about" component={Navigation}/>
           <Route path="/members" exact component={Members}/>
           <Route path="/members/:activetab" component={Members}/>
-          <Route path="/addmembers" component={AddMember}/>
         </Switch>
         <Footer/>
       </div>

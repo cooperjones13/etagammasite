@@ -8,7 +8,7 @@ import rootReducer from './store/reducers/rootReducer.js';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import {createFirestoreInstance} from 'redux-firestore';
-import { ReactReduxFirebaseProvider  ,getFirebase} from 'react-redux-firebase';
+import { ReactReduxFirebaseProvider, getFirebase} from 'react-redux-firebase';
 import * as firebase from "firebase/app";
 import 'firebase/firestore';
 import  'firebase/database'

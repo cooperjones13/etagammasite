@@ -19,3 +19,5 @@ const memberReducer = (state = initState, action) =>{
 }
 
 export default memberReducer;
+
+// GetSheetDone.labeledCols("10byFtG7v3t_ihh7ZcTXT7e_S_2DeNOSzvYylTGBe_gY")

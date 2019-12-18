@@ -33,7 +33,7 @@ function Navigation() {
           </NavDropdown>
           <Nav.Link as={Link} to="/rush" className="navlinks">Rush</Nav.Link>
           <NavDropdown title="Members" id="collasible-nav-dropdown" alignRight className="navlinks">
-            <NavDropdown.Item as={Link} to="/members/actives">Actives</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/members/active">Actives</NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/members/alumni">Alumni</NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/family-tree">Family Tree</NavDropdown.Item>
             <NavDropdown.Divider />
