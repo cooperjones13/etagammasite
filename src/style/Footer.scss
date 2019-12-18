@@ -5,6 +5,11 @@
     flex-direction: row;
     text-align: center;
     justify-content: center !important;
+    background-color: theme-color("primary");
+    padding: 1vh 4% !important;
+    display: flex;
+    align-items: center;
+    height: 8vh;
 }
 
 .navbar-text{

@@ -38,7 +38,6 @@ function Navigation() {
             <NavDropdown.Item as={Link} to="/family-tree">Family Tree</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item as={Link} to="/login">Login</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/addmembers">Add Members</NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>

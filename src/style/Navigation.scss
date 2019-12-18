@@ -4,9 +4,13 @@
 .Navigation{
     background-color: theme-color("primary");
     padding: 1vh 4% !important;
+    height: 12vh;
     display: flex;
     align-items: center;
     
+    .active{
+        background-color: darken($color: theme-color("light"), $amount: 3) !important;
+    }
 
     .navbar-brand{
         font-size: 2rem;

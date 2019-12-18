@@ -1,12 +1,11 @@
 @import "./custom.scss";
 .Members{
+    text-align: center;
     .member-banner{
-        height: 30vh;
+        height: 20vh;
         padding: 0 10%;
         margin:0;
-        background-position-y: 15%;
         background-attachment: fixed;
-        background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         transition: background-position-y 2s ease;
@@ -18,13 +17,29 @@
         flex-direction: column;
         justify-content: center;
         color: theme-color("light");
-    
-        &:hover{
-            background-position-y: 30%;
+
+        @media only screen and (min-width: 600px) {
+            &:hover{
+                background-position-y: 15%;
+            }
+
+            &{
+                background-position-y: 20%;
+            }
+
+            h2{
+                font-size: 4rem;
+            }
         }
-    
-        h2{
-            font-size: 4rem;
+        
+        @media only screen and (max-width: 600px){ 
+            &{
+                background-size: cover;
+                background-position-y: 30%;
+            }
+            h2{
+                font-size: 2rem;
+            }
         }
         // background-position: bottom;
     }
@@ -45,6 +60,14 @@
 
         .card{
             margin: 1%;
+            text-align: center;
         }
+    }
+
+    .spinner-grow{
+        margin: 25vh 0;
+        width: 10vh;
+        height: 10vh;
+        background-color: theme-color("primary");
     }
 }

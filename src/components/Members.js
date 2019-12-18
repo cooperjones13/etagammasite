@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 // import {Redirect, NavLink} from 'react-router-dom';
-import {Jumbotron, Button, Card} from 'react-bootstrap';
+import {Jumbotron, Button, Card, Badge, Spinner} from 'react-bootstrap';
 import './../style/Members.scss';
 import GetSheetDone from 'get-sheet-done';
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
@@ -68,11 +68,14 @@ function Members(props) {
                 <h2>Brothers of Eta Gamma Chapter</h2>
             </Jumbotron>
 
-            <section className="membersView">
+            {
+                isLoaded?
+                (<section className="membersView">
                 {members && Object.entries(members).map(member=>{
                     return(
                         <Card style={{ width: '18rem' }} key={member[1].uid}>
                             <Card.Body>
+                                <Card.Text><Badge variant="secondary">ΗΓ {member[1].rollnum}</Badge></Card.Text>
                                 <Card.Title>{member[1].fullname}</Card.Title>
                                 <Card.Text>
                                 {member[1].status}
@@ -80,9 +83,11 @@ function Members(props) {
                                 {(member[1].linkurl !== "")?(<Button variant="primary" href={member[1].linkurl} target="_blank">Contact</Button>):null}
                             </Card.Body>
                         </Card>
-                    )
-                })}
-            </section>
+                        )
+                    })}
+                </section>):
+                <Spinner animation="grow" />
+            }
         </div>
     );
 }
