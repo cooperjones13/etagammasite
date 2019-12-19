@@ -1,0 +1,9 @@
+@import "./custom.scss";
+
+.PageNotFound{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 81vh;
+    padding: 5vw;
+}

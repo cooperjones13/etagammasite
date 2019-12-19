@@ -4,10 +4,11 @@ import React from 'react';
 // import {Link} from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 import {Card, Button, Badge} from 'react-bootstrap'
+import placeholder from '../images/placeholder.png';
 import './../style/Members.scss';
 
 
-function MemberList({members}) {
+function MemberList({members, page}) {
 
     return (
         <div className="members-list">  
@@ -15,17 +16,27 @@ function MemberList({members}) {
             return(
                 <Card style={{ width: '18rem' }} key={member[1].uid}>
                     {
-                        // member[1].imageurl !== ""?
-                        false? //uncomment line above and comment this line if you want to add pictures
-                            (
-                                <LazyLoad>
-                                    <Card.Img variant="top" src={member[1].imageurl} />
-                                </LazyLoad>
-                            )
-                            :null
+                        page === "active" && member[1].imageurl === ""?
+                        (
+                            <LazyLoad>
+                                <Card.Img variant="top" src={placeholder} />
+                            </LazyLoad>
+                        )
+                        :page === "active" && member[1].imageurl !== ""?
+                        (
+                            <LazyLoad>
+                                <Card.Img variant="top" src={member[1].imageurl} />
+                            </LazyLoad>
+                        )
+                        :null
+
                     }
                     <Card.Body>
-                        <Card.Text><Badge variant="secondary">ΗΓ {member[1].rollnum}</Badge></Card.Text>
+                        {
+                            (member[1].status.toUpperCase() !== "PLEDGE")?
+                            <Card.Text><Badge variant="secondary">ΗΓ {member[1].rollnum}</Badge></Card.Text>
+                            :null
+                            }
                         <Card.Title>{member[1].fullname}</Card.Title>
                         <Card.Text>
                         {member[1].status}

@@ -47,14 +47,33 @@
     }
     
     .members-filter{
-        padding: 1% 5%;
+        padding: 1vh 7.5vw;
+        
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         background-color: lighten(theme-color("secondary"), 10);
+        flex-wrap: wrap;
+
+        btn-group{
+            margin: 1vh 0;
+        }
+
+        .btn{
+            border: darken(theme-color("primary"), 10) 1px solid;
+        }
 
         .search-members{
             width: 300px;
+        }
+
+        @media only screen and (max-width: 650px) {
+            &{
+                justify-content: center;
+            }
+            .search-members{
+                margin-top: 1vh;
+            }
         }
         
     }
@@ -63,19 +82,33 @@
         width: 100%;
         display: flex;
         flex-direction: row;
-        min-height: 60vh;
+        min-height: 55vh;
         .members-list{
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: flex-start;
+            width: 100vw;
+            margin: 1vh 5vw;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 286px [col-start]);
+            column-gap: 1vw;
+            row-gap: 1vw;
+            justify-content: center;
+            justify-items: center;
         }
 
         .card{
-            margin: 1%;
             text-align: center;
+            background-color: darken(theme-color("light"), 1);
+            
+
+            .card-body{
+                display:flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            h5{
+                flex: 1 0 auto;
+            }
             
         }
     }

@@ -41,7 +41,7 @@ function Members(props) {
             for(let row in sheet.data){
                 // console.log(sheet.data[row]);
                 if(sheet.data[row].blank === "FALSE"){
-                    if(filter.toUpperCase() === "ALUMNI" || filter.toUpperCase() === "ACTIVE"){
+                    if(filter.toUpperCase() === "ALUMNI" || filter.toUpperCase() === "ACTIVE" || filter.toUpperCase() === "PLEDGE" ){
 
                         if(sheet.data[row].status === filter.toUpperCase() && sheet.data[row].fullname.includes(searchFilter)){
                             // console.log(sheet.data[row]);
@@ -79,6 +79,7 @@ function Members(props) {
                 <ButtonGroup aria-label="Basic example">
                     <Button as={Link}  to="/members/active" variant="primary">Actives</Button>
                     <Button as={Link}  to="/members/alumni" variant="primary">Alumni</Button>
+                    <Button as={Link}  to="/members/pledge" variant="primary">Pledges</Button>
                     <Button as={Link}  to="/members/all" variant="primary">All</Button>
                 </ButtonGroup>
                 <InputGroup className="search-members">
@@ -100,7 +101,7 @@ function Members(props) {
             {
                 isLoaded?
                 (<section className="membersView">
-                    <MemberList members={members}/>
+                    <MemberList members={members} page={filter}/>
                 </section>):
                 <Spinner animation="grow" />
             }
