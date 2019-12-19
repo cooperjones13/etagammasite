@@ -17,6 +17,8 @@
         flex-direction: column;
         justify-content: center;
         color: theme-color("light");
+        border-bottom-style: groove;
+        border-bottom: theme-color("secondary");
 
         @media only screen and (min-width: 600px) {
             &:hover{
@@ -44,23 +46,37 @@
         // background-position: bottom;
     }
     
-    .member-search{
+    .members-filter{
         padding: 1% 5%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        background-color: lighten(theme-color("secondary"), 10);
+
+        .search-members{
+            width: 300px;
+        }
+        
     }
     
     .membersView{
         width: 100%;
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        min-height: 60vh;
+        .members-list{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
 
         .card{
             margin: 1%;
             text-align: center;
+            
         }
     }
 

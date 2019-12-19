@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
+// import LazyLoad from 'react-lazyload';
 // import {Redirect, NavLink} from 'react-router-dom';
-import {Jumbotron, Button, Card, Badge, Spinner} from 'react-bootstrap';
+import {Jumbotron, Button, Spinner, ButtonGroup, InputGroup, FormControl} from 'react-bootstrap';
 import './../style/Members.scss';
 import GetSheetDone from 'get-sheet-done';
-import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFilter } from '@fortawesome/free-solid-svg-icons'
+import MemberList from './MemberList.js'
 
 function Members(props) {
 
     const [filter, setFilter] = useState(props.match.params.activetab);
+    const [searchFilter, setSearchFilter] = useState("");
     // console.log(props);
     const [sheet, setSheet] = useState([]);
 
@@ -36,15 +40,18 @@ function Members(props) {
             //  console.log(sheet.data);
             for(let row in sheet.data){
                 // console.log(sheet.data[row]);
-                if(sheet.data[row].isnotblank === "FALSE"){
+                if(sheet.data[row].blank === "FALSE"){
                     if(filter.toUpperCase() === "ALUMNI" || filter.toUpperCase() === "ACTIVE"){
-                        // console.log(row);
-                        if(sheet.data[row].status === filter.toUpperCase()){
+
+                        if(sheet.data[row].status === filter.toUpperCase() && sheet.data[row].fullname.includes(searchFilter)){
                             // console.log(sheet.data[row]);
                             filteredSheet.push(sheet.data[row]);
                         }
                     } else if (filter.toUpperCase() === "ALL"){
-                        filteredSheet.push(sheet.data[row]);
+                        if(sheet.data[row].fullname.includes(searchFilter)){
+                            // console.log(sheet.data[row]);
+                            filteredSheet.push(sheet.data[row]);
+                        }
                     }
                 }
             }
@@ -54,11 +61,12 @@ function Members(props) {
         async function setFilteredMembers(){
             const filteredSheet = await loadMembers();
             setMembers(filteredSheet);
+            return null;
             // console.log("***",filteredSheet);
         }
         
         setFilteredMembers();
-    }, [filter, sheet, isLoaded]);
+    }, [filter, sheet, isLoaded, searchFilter]);
     
 
  
@@ -67,24 +75,32 @@ function Members(props) {
             <Jumbotron fluid className="member-banner banner">
                 <h2>Brothers of Eta Gamma Chapter</h2>
             </Jumbotron>
-
+            <div className="members-filter">
+                <ButtonGroup aria-label="Basic example">
+                    <Button as={Link}  to="/members/active" variant="primary">Actives</Button>
+                    <Button as={Link}  to="/members/alumni" variant="primary">Alumni</Button>
+                    <Button as={Link}  to="/members/all" variant="primary">All</Button>
+                </ButtonGroup>
+                <InputGroup className="search-members">
+                    <InputGroup.Prepend>
+                        <InputGroup.Text id="btnGroupAddon"><FontAwesomeIcon icon={faFilter}/></InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <FormControl
+                        onChange={(e)=>{
+                            setSearchFilter(e.target.value);
+                            // console.log(e.target.value);
+                        }}
+                        type="text"
+                        placeholder="Search"
+                        aria-label="Search"
+                        aria-describedby="btnGroupAddon"
+                    />
+                </InputGroup>
+            </div>
             {
                 isLoaded?
                 (<section className="membersView">
-                {members && Object.entries(members).map(member=>{
-                    return(
-                        <Card style={{ width: '18rem' }} key={member[1].uid}>
-                            <Card.Body>
-                                <Card.Text><Badge variant="secondary">ΗΓ {member[1].rollnum}</Badge></Card.Text>
-                                <Card.Title>{member[1].fullname}</Card.Title>
-                                <Card.Text>
-                                {member[1].status}
-                                </Card.Text>
-                                {(member[1].linkurl !== "")?(<Button variant="primary" href={member[1].linkurl} target="_blank">Contact</Button>):null}
-                            </Card.Body>
-                        </Card>
-                        )
-                    })}
+                    <MemberList members={members}/>
                 </section>):
                 <Spinner animation="grow" />
             }
