@@ -1,8 +1,12 @@
 @import "./custom.scss";
 .History{
     min-height: 81vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     .banner{
         text-align: center;
+        width: 100%;
         height: 20vh;
         padding: 0 10%;
         margin:0;
@@ -45,5 +49,9 @@
             }
         }
         // background-position: bottom;
+    }
+
+    .historyCard{
+        margin: 2rem ;
     }
 }
