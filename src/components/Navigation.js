@@ -25,9 +25,9 @@ function Navigation() {
           <Nav.Link as={Link} to="/" className="navlinks">Home</Nav.Link>
           <NavDropdown as={DropdownButton} title="About" id="collasible-nav-dropdown" alignRight className="navlinks">
             <NavDropdown.Item as={Link} to="/history">History</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/brotherhood">Brotherhood</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/careers">Profession</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/service">Service</NavDropdown.Item>
+            {/* <NavDropdown.Item as={Link} to="/brotherhood">Brotherhood</NavDropdown.Item> */}
+            {/* <NavDropdown.Item as={Link} to="/careers">Profession</NavDropdown.Item> */}
+            {/* <NavDropdown.Item as={Link} to="/service">Service</NavDropdown.Item> */}
             <NavDropdown.Divider />
             <NavDropdown.Item href="http://www.thetatau.org" target="_blank">Nationals</NavDropdown.Item>
             

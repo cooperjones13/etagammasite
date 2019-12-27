@@ -39,11 +39,13 @@ function Home() {
                 <p className="card-img-caption">{pillar.imgCaption}</p>
             </div>
             <Card.Body>
-                <Card.Title>{pillar.title}</Card.Title>
-                <Card.Text>
-                {pillar.description}
-                </Card.Text>
-                <Button variant="primary" as={Link} to={pillar.url}>Explore {pillar.buttonText}</Button>
+                <div>
+                    <Card.Title>{pillar.title}</Card.Title>
+                    <Card.Text>
+                    {pillar.description}
+                    </Card.Text>
+                </div>
+                {/* <Button variant="primary" as={Link} to={pillar.url}>Explore {pillar.buttonText}</Button> */}
             </Card.Body>
         </Card>
     )

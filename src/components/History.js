@@ -49,8 +49,7 @@ function History() {
                 <Card.Title>Open Motto</Card.Title>
                 <blockquote className="blockquote mb-0">
                   <p>
-                    {'\"'}
-                    Whatsoever thy hand findeth to do, do it with thy might{'\"'}
+                    {'\"'}Whatsoever thy hand findeth to do, do it with thy might{'\"'}
                   </p>
                   <footer className="blockquote-footer">
                     <cite title="Source Title">Ecclesiastes 9:10</cite>
