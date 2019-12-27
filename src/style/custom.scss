@@ -3,6 +3,10 @@
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins";
 
+.App{
+  max-width: 100vw;
+}
+
 $theme-colors: (
   "primary":    rgba(145,51,51,1),
   "secondary":  #FFDF80,
@@ -10,7 +14,7 @@ $theme-colors: (
 );
 
 *{
-  font-family: 'Muli', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 $placeholder-img: '../images/placeholder.png';

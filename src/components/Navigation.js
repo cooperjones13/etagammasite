@@ -24,20 +24,29 @@ function Navigation() {
         <Nav>
           <Nav.Link as={Link} to="/" className="navlinks">Home</Nav.Link>
           <NavDropdown as={DropdownButton} title="About" id="collasible-nav-dropdown" alignRight className="navlinks">
-            <NavDropdown.Item as={Link} to="/faq">FAQ</NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/history">History</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/values">Values</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/brotherhood">Brotherhood</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/careers">Profession</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/service">Service</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="http://www.thetatau.org" target="_blank">Nationals</NavDropdown.Item>
             
           </NavDropdown>
-          <Nav.Link as={Link} to="/rush" className="navlinks">Rush</Nav.Link>
+          <NavDropdown as={DropdownButton} title="Rush" id="collasible-nav-dropdown" alignRight className="navlinks">
+            <NavDropdown.Item as={Link} to="/rush">Info</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/rush/faq">FAQ</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/rush/contact">Contact</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="https://forms.gle/h7A6dZ9gWuGvgnaB7" target="_blank">Signup</NavDropdown.Item>
+            
+          </NavDropdown>
+
           <NavDropdown title="Members" id="collasible-nav-dropdown" alignRight className="navlinks">
             <NavDropdown.Item as={Link} to="/members/active">Actives</NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/members/alumni">Alumni</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/family-tree">Family Tree</NavDropdown.Item>
+            {/* <NavDropdown.Item as={Link} to="/family-tree">Family Tree</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item as={Link} to="/login">Login</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/login">Login</NavDropdown.Item> */}
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>

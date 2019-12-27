@@ -1,0 +1,70 @@
+@import "./custom.scss";
+
+.Rush{
+    min-height: 81vh;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .card-header-tabs{
+        width: 100%;
+        margin: 5px;
+    }
+
+    .rushFlyer{
+        height: 500px;
+        background-image: url(../images/finalflyer-01.jpg);
+        background-repeat: no-repeat;
+        background-color: #C3262D;
+        background-position: center;
+        background-size: contain;
+        width: 100%;
+    }
+
+    .aboutRush{
+        margin: 2rem 0;
+
+        .nav-link{
+            color: theme-color("primary");
+        }
+
+        .active{
+            color: theme-color("dark");
+        }
+        .competingList{
+            
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 200px [col-start]);
+            column-gap: 1vw;
+            row-gap: 1vw;
+            justify-content:center;
+            justify-items: left;
+        }
+
+        .note{
+            color: darken(theme-color("light"), 50);
+            font-size: 12px;
+            width: 100%;
+            text-align: center;
+            margin: 0;
+        }
+
+        #prideFlag{
+            font-size: 2rem;
+        }
+
+        .contact{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            h5{
+                width: 100%;
+            }
+
+        }
+
+    }
+}

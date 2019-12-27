@@ -73,7 +73,7 @@ function Members(props) {
     return (
         <div className="Members">
             <Jumbotron fluid className="member-banner banner">
-                <h2>Brothers of Eta Gamma Chapter</h2>
+                <h2>Members</h2>
             </Jumbotron>
             <div className="members-filter">
                 <ButtonGroup aria-label="Basic example">

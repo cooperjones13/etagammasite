@@ -1,9 +1,10 @@
 import React from 'react';
-import {Jumbotron, Card, Button} from 'react-bootstrap'
+import {Jumbotron, Card, Button, Image} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import '../style/Home.scss'
 
 import placeholder from '../images/placeholder.png';
+import coat from '../images/thetatau-coat.png';
 
 function Home() {
 
@@ -11,17 +12,23 @@ function Home() {
         {
             "title": "For our Brotherhood",
             "description" : "We forge lifelong bonds of fraternal friendship, a journey that develops and delivers a network of lasting personal and professional relationships. We foster an inviting, safe, and social environment in which our members become lifelong friends.",
-            "imgCaption": "Brothers doing brotherly stuff dude"
+            "imgCaption": "Brothers doing brotherly stuff dude",
+            "buttonText": "Brotherhood",
+            "url":"/brotherhood"
         },
         {
             "title": " For our Community",
             "description" : "We are known for our service to our college, university and the larger community. Our service projects create a unifying environment for learning and personal growth for our members.",
-            "imgCaption": "Brothers doing brotherly stuff dude"
+            "imgCaption": "Brothers doing brotherly stuff dude",
+            "buttonText": "Service",
+            "url":"/service"
         },
         {
             "title": "For our Profession",
             "description" : "We develop and nurture engineers with strong communication, problem-solving, collaboration, and leadership skills that we demonstrate in our profession, our community, and in our lives.",
-            "imgCaption": "Brothers doing brotherly stuff dude"
+            "imgCaption": "Brothers doing brotherly stuff dude",
+            "buttonText": "Professionalism",
+            "url":"/careers"
         } 
     ];
 
@@ -36,7 +43,7 @@ function Home() {
                 <Card.Text>
                 {pillar.description}
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Button variant="primary" as={Link} to={pillar.url}>Explore {pillar.buttonText}</Button>
             </Card.Body>
         </Card>
     )
@@ -44,8 +51,11 @@ function Home() {
     return (
         <div className="Home">
             <Jumbotron fluid className="banner">
-                <h2>Theta Tau</h2>
-                <p>Engineering Leadership for Service, Profession, and Brotherhood</p>
+                <Image src={coat}/>
+                <div className="banner-text">
+                    <h2>Theta Tau</h2>
+                    <p><em>Engineering Leadership for Service, Profession, and Brotherhood</em></p>
+                </div>
             </Jumbotron>
             <section className="pillars">
                 {pillarCards}

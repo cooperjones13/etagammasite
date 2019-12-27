@@ -13,16 +13,27 @@
           rgba(145,51,51, 0.3)
         ),url('../images/orange.JPG');
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
+        align-items: center;
         color: theme-color("light");
-    
+
+        img{
+            height: 200px;
+            -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.4));
+            filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.4));
+            margin-right: 2%;
+        }
+        .banner-text{
+            display: flex;
+            flex-direction: column;
+        }
     
         @media only screen and (min-width: 600px) {
 
             h2{
                 font-size: 5rem;
-                font-weight: 700;
+                font-weight: 600;
                 text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.4);
             }
             p{
@@ -33,12 +44,16 @@
           }
     
         @media only screen and (max-width: 600px) {
-            h2{
+            img{
                 display: none;
             }
+            h2{
+                font-size: 2.5rem;
+                font-weight: 600;
+            }
             p{
-                font-size: 2rem;
-                font-weight: 500;
+                font-size: 1.5rem;
+                font-weight: 300;
                 text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.4);
             }
           }
@@ -50,7 +65,7 @@
         flex-wrap: wrap;
     }
     
-    @media only screen and (min-width: 800px) and (max-width: 1180px) {
+    @media only screen and (min-width: 800px) and (max-width: 1260px) {
         .card{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -58,6 +73,7 @@
                 "img body body"
             ;
             width:100%;
+            max-height: 40vh;
         }
         .card-body{
             grid-area: body;
@@ -66,9 +82,13 @@
             justify-content: center;
             align-items: center;
             padding: 1.25em 5vw;
+            .card-text{
+                flex-grow: 2;
+            }
         }
         .img-hover-container{
             grid-area: img;
+            height: 100%;
         }
       }
     @media only screen and (max-width: 800px) {
@@ -87,9 +107,11 @@
             display:none;
         }
       }
-    @media only screen and (min-width: 1180px){
+    @media only screen and (min-width: 1261px){
         .card{
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
             min-width: 25%;
             max-width: 23rem;
         }
