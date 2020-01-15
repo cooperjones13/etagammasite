@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/etagammasite/static/css/main.d82bc2f3.chunk.css",
-    "main.js": "/etagammasite/static/js/main.a391d37e.chunk.js",
-    "main.js.map": "/etagammasite/static/js/main.a391d37e.chunk.js.map",
-    "runtime-main.js": "/etagammasite/static/js/runtime-main.03e67bfd.js",
-    "runtime-main.js.map": "/etagammasite/static/js/runtime-main.03e67bfd.js.map",
-    "static/js/2.8c450bdc.chunk.js": "/etagammasite/static/js/2.8c450bdc.chunk.js",
-    "static/js/2.8c450bdc.chunk.js.map": "/etagammasite/static/js/2.8c450bdc.chunk.js.map",
+    "main.js": "/etagammasite/static/js/main.5660634f.chunk.js",
+    "main.js.map": "/etagammasite/static/js/main.5660634f.chunk.js.map",
+    "runtime-main.js": "/etagammasite/static/js/runtime-main.eadfca9e.js",
+    "runtime-main.js.map": "/etagammasite/static/js/runtime-main.eadfca9e.js.map",
+    "static/js/2.c6ff34d0.chunk.js": "/etagammasite/static/js/2.c6ff34d0.chunk.js",
+    "static/js/2.c6ff34d0.chunk.js.map": "/etagammasite/static/js/2.c6ff34d0.chunk.js.map",
     "index.html": "/etagammasite/index.html",
-    "precache-manifest.c4132b205852900eac4faf9a90fd219e.js": "/etagammasite/precache-manifest.c4132b205852900eac4faf9a90fd219e.js",
+    "precache-manifest.27f73e0ccea3c73b296c5693f9f340cd.js": "/etagammasite/precache-manifest.27f73e0ccea3c73b296c5693f9f340cd.js",
     "service-worker.js": "/etagammasite/service-worker.js",
     "static/css/main.d82bc2f3.chunk.css.map": "/etagammasite/static/css/main.d82bc2f3.chunk.css.map",
-    "static/js/2.8c450bdc.chunk.js.LICENSE": "/etagammasite/static/js/2.8c450bdc.chunk.js.LICENSE",
+    "static/js/2.c6ff34d0.chunk.js.LICENSE": "/etagammasite/static/js/2.c6ff34d0.chunk.js.LICENSE",
     "static/media/Rush.scss": "/etagammasite/static/media/finalflyer-01.a6e05667.jpg",
     "static/media/History.scss": "/etagammasite/static/media/orange.68f41ca3.JPG",
     "static/media/Home.scss": "/etagammasite/static/media/placeholder.efecd9d4.png",
@@ -19,9 +19,9 @@
     "static/media/thetatauwhite.png": "/etagammasite/static/media/thetatauwhite.0f013b3a.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.03e67bfd.js",
-    "static/js/2.8c450bdc.chunk.js",
+    "static/js/runtime-main.eadfca9e.js",
+    "static/js/2.c6ff34d0.chunk.js",
     "static/css/main.d82bc2f3.chunk.css",
-    "static/js/main.a391d37e.chunk.js"
+    "static/js/main.5660634f.chunk.js"
   ]
 }

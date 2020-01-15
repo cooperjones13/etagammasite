@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/etagammasite/precache-manifest.c4132b205852900eac4faf9a90fd219e.js"
+  "/etagammasite/precache-manifest.27f73e0ccea3c73b296c5693f9f340cd.js"
 );
 
 self.addEventListener('message', (event) => {
